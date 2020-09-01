@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Student Grade Calculator</title>
+ <link rel="stylesheet" href="project2.css" />
+ <link rel="stylesheet" href="bootstrap-4.3.1-dist\css\bootstrap.css">
+ <!--[if lt IE 9]>
+      <script src="bootstrap-4.3.1-dist/js/html5shiv.min.js"></script>
+      <script src="bootstrap-4.3.1-dist/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body style="background-color: aqua;">
+    <div class="container">
+        <div class="one">
+            <div class="row">
+                <div class="d-none d-sm-none d-md-block col-md-6 leftside">
+                    <div class="two">
+                    <h3>STUDENT<br />GRADE<br />CALCU</h3>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 rightside">
+                    <div class="rightside">
+                    <input id="three" type="text" placeholder="WEB PROGRAMMING"><br /><br />
+                    <input id="four" type="text" placeholder="MATH"><br /><br />
+                    <input id="five" type="text" placeholder="COMPUTER"><br /><br />
+                    <input id="six" type="text" placeholder="PHYSICS"><br /><br />
+                    <h8>SHOWPERCENTAGE</h8>
+                    </div>
+                </div><br />
+                <div class="col-md-12 centerside">
+                    <h7 id="seven"></h7>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".one").slideDown(1400);
+        var x = document.getElementById("three");
+        var xx = document.getElementById("four");
+        var xxx = document.getElementById("five");
+        var xxxx = document.getElementById("six");
+        $('h8').click(function(){
+            var total = Number(xx.value)+Number(x.value)+Number(xxx.value)+Number(xxxx.value);
+            alert(total);
+            var y = (total/400)*100;
+            var z1,z2;
+            if(y >= 90){
+                z1 = "A+",
+                z2 = "pass"
+            }
+            else if(y >= 80){
+                z1 = "A",
+                z2 = "pass"
+            }
+            else if(y >= 70){
+                z1 = "B",
+                z2 = "pass"
+            }
+            else if(y >= 60){
+                z1 = "C",
+                z2 = "pass"
+            }
+            else if(y >= 50){
+                z1 = "D",
+                z2 = "pass"
+            }
+            else{
+                z1 = "F",
+                z2 = "Fail"
+            }
+            document.getElementById("seven").innerHTML = "out of 400 your total is "+total+" and percentage is "+y.toFixed(2)+" %.<br />your grade is "+z1+" you are "+z2+" .";
+
+        })
+})
+</script>
+
+
+</body>
+</html>
